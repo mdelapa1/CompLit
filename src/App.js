@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import Start    from './components/Start.js';
+import Google   from './components/Google.js';
+import Twitter  from './components/Twitter.js';
+import Facebook from './components/Facebook.js';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className='App-header'>
+          <h1 className='App-title'>
+            CompLit
+          </h1>
+        </header>
+        <div className='App-body'>
+          <Routes>
+            <Route path='/' element={<Start />} />
+            <Route path='/google' element={<Google />} />
+            <Route path='/twitter' element={<Twitter />} />
+            <Route path='/facebook' element={<Facebook />} />
+            
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
