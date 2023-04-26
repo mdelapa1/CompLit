@@ -1,6 +1,8 @@
+import React, {useState, useEffect} from 'react';
 import '../App.css';
 import Popup from 'reactjs-popup';
 import googlelogo from '../images/googlelogo.png';
+
 
 // TODO
 // Fix the CSS to properly vertically align the search icon/textarea
