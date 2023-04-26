@@ -114,11 +114,12 @@
   padding: 5px 8px 0 14px;
 }
 
-.google-textarea > textarea {
+.google-textarea > input {
   font-family: Roboto,arial,sans-serif;
   line-height: 22px;
   margin-bottom: 8px;
   resize: none;
+  white-space: nowrap;
   background-color: transparent;
   border: none;
   margin: 0;

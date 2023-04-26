@@ -13,7 +13,7 @@ function Google() {
   function handleSubmit(e) {
     e.preventDefault();
 
-
+    // alert(`Search term: ${e.target.search.value}`);
   }
 
   return (
@@ -29,7 +29,7 @@ function Google() {
               </path>
             </svg>
             </div>
-            <textarea/>
+            <input type="text" name="search"/>
           </div>
                   <br/>
                   <input class="google-button" type="submit" value="Google Search"/>
@@ -38,8 +38,8 @@ function Google() {
         
       </div>
 
-        {/* <Popup trigger={
-          <button className="button"> Open Modal </button>
+        <Popup trigger={
+          <button></button>
         } 
         closeOnDocumentClick={false}
         closeOnEscape={false}
@@ -48,7 +48,7 @@ function Google() {
           <p>
             Welcome to google!
           </p>
-        </Popup> */}
+        </Popup>
     </div>
   );
 }
