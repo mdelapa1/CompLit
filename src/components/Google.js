@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import '../App.css';
 import Popup from 'reactjs-popup';
 import googlelogo from '../images/googlelogo.png';
@@ -7,8 +7,35 @@ import googlelogo from '../images/googlelogo.png';
 // TODO
 // Fix the CSS to properly vertically align the search icon/textarea
 
-function Google() {
+function Google(props) {
   const [popupNumber, setPopupNumber] = useState(0);
+  const [popup, setPopup] = useState(undefined);
+
+  const popups = [
+    <Popup
+        open={true}
+        closeOnDocumentClick={false}
+        closeOnEscape={false}
+          modal
+          >
+          <p>
+            Placeholder
+          </p>
+          <button onClick={() => setPopupNumber(1)}>Next</button>
+      </Popup>,
+      <Popup
+      open={true}
+      closeOnDocumentClick={false}
+      closeOnEscape={false}
+        modal
+        >
+        <p>
+          Placeholder 2
+        </p>
+        <button onClick={() => setPopupNumber(0)}>Previous</button>
+        <button onClick={() => setPopupNumber(2)}>Next</button>
+      </Popup>
+  ]
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -35,20 +62,12 @@ function Google() {
                   <input class="google-button" type="submit" value="Google Search"/>
                   <input class="google-button" type="button" value="I'm Feeling Lucky"/>
         </form>
+
+        {popups[popupNumber]}
         
       </div>
 
-        <Popup trigger={
-          <button></button>
-        } 
-        closeOnDocumentClick={false}
-        closeOnEscape={false}
-          modal
-          >
-          <p>
-            Welcome to google!
-          </p>
-        </Popup>
+        
     </div>
   );
 }
