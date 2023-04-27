@@ -1,9 +1,12 @@
 import React, {useState, useRef, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import '../App.css';
 import Popup from 'reactjs-popup';
 import googlelogo from '../images/googlelogo.png';
 import r0 from '../images/googleresult0.jpg';
-
+import r1 from '../images/googleresult1.jpg';
+import r2 from '../images/googleresult2.jpg';
+import r3 from '../images/googleresult3.jpg';
 
 // TODO
 // Fix the CSS to properly vertically align the search icon/textarea
@@ -16,6 +19,9 @@ function Google(props) {
   
   const images = [
     r0,
+    r1,
+    r2,
+    r3
   ]
 
   const popups = [
@@ -129,7 +135,7 @@ function Google(props) {
       }}
         >
         <p>
-          This is what shows up when you search "chocolate chip cookie on Google."
+          This is what shows up when you search "chocolate chip cookie" on Google.
         </p>
         <button class="initial-button" onClick={() => {setPopupNumber(7); setImageNumber(1)}}>Click here to proceed</button>
       </Popup>,
@@ -146,9 +152,78 @@ function Google(props) {
         background: "rgb(255, 255, 255, 0)"
       }}
         >
-        <p>todo</p>
+        <p>The circled texts are all different results given by the Google search.</p>
+        <p>Each result is a different website with different information on them, you can click on the larger blue text to take you to the associated website.</p>
+        <p>The blue text is called a "link", which often appears like <Link>this</Link>. It will normally appear blue if it's a link you have not clicked on before, and purple if you have clicked on it previously. Also, if you move your mouse over it, your cursor changes to let you know you can click on it.</p>
         <button class="previous-button" onClick={() => {setPopupNumber(6); setImageNumber(0)}}>Click here to go back</button>
         <button class="next-button" onClick={() => {setPopupNumber(8); setImageNumber(2)}}>Click here to proceed</button>
+      </Popup>,
+      // 8
+      <Popup
+      open={true} closeOnDocumentClick={false} closeOnEscape={false} modal
+      contentStyle={{
+        position: "fixed",
+        top: "6vh",
+        left: "6vh"
+      }}
+      overlayStyle={{
+        "pointer-events": "none",
+        background: "rgb(255, 255, 255, 0)"
+      }}
+        >
+        <p>For some searches, Google will also display additional information in the area circled in red. This is often a short summary of information on what you searched.</p>
+        <p>Normally, this information will be taken from a website like Wikipedia (another great website for finding information on various things!).</p>
+        <button class="previous-button" onClick={() => {setPopupNumber(7); setImageNumber(1)}}>Click here to go back</button>
+        <button class="next-button" onClick={() => {setPopupNumber(9);setImageNumber(0)}}>Click here to proceed</button>
+      </Popup>,
+      // 9
+      <Popup
+      open={true} closeOnDocumentClick={false} closeOnEscape={false} modal
+      contentStyle={{
+        position: "fixed",
+        top: "6vh",
+        left: "6vh"
+      }}
+      overlayStyle={{
+        "pointer-events": "none",
+        background: "rgb(255, 255, 255, 0)"
+      }}
+        >
+        <p>In addition to searching for websites, Google also lets you search for images and videos! Let's see how.</p>
+        <button class="previous-button" onClick={() => {setPopupNumber(8); setImageNumber(2)}}>Click here to go back</button>
+        <button class="next-button" onClick={() => {setPopupNumber(10); setImageNumber(3)}}>Click here to proceed</button>
+      </Popup>,
+      // 10
+      <Popup
+      open={true} closeOnDocumentClick={false} closeOnEscape={false} modal
+      contentStyle={{
+        position: "fixed",
+        bottom: "6vh",
+        left: "6vh"
+      }}
+      overlayStyle={{
+        "pointer-events": "none",
+        background: "rgb(255, 255, 255, 0)"
+      }}
+        >
+        <p>To search for images or videos, you perform your search as you normally would initially.</p>
+        <p>Then, for images, you click on the circled button with the word "images" on it, and you would do the same for searching for videos.</p>
+        <button class="previous-button" onClick={() => {setPopupNumber(9); setImageNumber(0)}}>Click here to go back</button>
+        <button class="next-button" onClick={() => {setPopupNumber(11); setImageNumber(0)}}>Click here to proceed</button>
+      </Popup>,
+      // 11
+      <Popup
+      open={true} closeOnDocumentClick={false} closeOnEscape={false} modal
+      contentStyle={{
+        position: "fixed",
+        bottom: "6vh",
+        left: "6vh",
+        width: "50%",
+      }}
+        >
+        <p>That's the essentials of how to use Google!</p>
+        <button class="previous-button" onClick={() => {setPopupNumber(10); setImageNumber(3)}}>Click here to go back</button>
+        <Link to="/"><button class="next-button">Click here to go back to the home page</button></Link>
       </Popup>,
   ]
 
@@ -215,7 +290,7 @@ function Google(props) {
     // after user types in correct search
     return (
       <div>
-        <img id="google-result" src={images[imageNumber]} />
+        <img class="google-result" src={images[imageNumber]} />
         {popups[popupNumber]}
       </div>
     );
