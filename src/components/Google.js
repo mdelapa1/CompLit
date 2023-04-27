@@ -40,7 +40,7 @@ function Google(props) {
         <p>
           Let’s show an example of how you would normally use google!
         </p>
-        <p>Let's </p>
+        <p>Let's pretend you wanted to learn how to bake chocolate chip cookies</p>
         <button class="previous-button" onClick={() => setPopupNumber(0)}>Click here to go back</button>
         <button class="next-button" onClick={() => {setPopupNumber(2); setSearchBarClicked(false)}}>Click here to proceed</button>
       </Popup>,
@@ -58,7 +58,7 @@ function Google(props) {
       }}
         >
         <p>
-          Move your mouse to the search bar (outlined in red) and click on it.
+          First, move your mouse to the search bar (outlined in red) and click on it.
         </p>
       </Popup>,
       // 3
@@ -75,33 +75,71 @@ function Google(props) {
       }}
         >
         <p>
-          Placeholder
+          Now, use your keyboard to type the following:
         </p>
+        <p>"chocolate chip cookie"</p> 
+        <p>After typing that, either press the "enter" key on your keyboard or press the button labled "Google Search"</p>
+      </Popup>,
+      // 4
+      <Popup
+      open={true} closeOnDocumentClick={false} closeOnEscape={false} modal
+      contentStyle={{
+        position: "fixed",
+        top: "6vh",
+        right: "6vh"
+      }}
+      overlayStyle={{
+        "pointer-events": "none",
+        background: "rgb(255, 255, 255, 0)"
+      }}
+        >
+        <p>
+          Uh oh, you made a spelling error! On the plus side, if the error is minor, Google will normally be able to tell what you meant to type and correct it. However, for now, make sure you type the following with correct spelling:
+        </p>
+        <p>"chocolate chip cookie"</p>
+      </Popup>,
+      // 5
+      <Popup
+        open={true} closeOnDocumentClick={false} closeOnEscape={false} modal
+          contentStyle={{
+            position: "fixed",
+            top: "6vh",
+            right: "6vh"
+          }}
+          >
+          <p>Great! Now, you typed in your search correctly, let's see what happens next!</p>
+          <button class="initial-button" onClick={() => {setDidSearch(true); setPopupNumber(6)}}>Click here to proceed</button>
       </Popup>
   ]
 
   function handleSubmit(e) {
     e.preventDefault();
-
-    // alert(`Search term: ${e.target.search.value}`);
+    let s = e.target.search.value.toLowerCase().trim();
+    console.log("handleSubmit called!");
+    if (popupNumber === 3) {
+      if (s !== "chocolate chip cookie") {
+        setPopupNumber(4);
+      } else {
+        setPopupNumber(5);
+      }
+    }
   }
 
   function onSearchFocus(e) {
     console.log("onSearchFocus called!");
-    if (popupNumber === 2) {
+    if (popupNumber === 2 || popupNumber === 4) {
       setPopupNumber(3);
       setSearchBarClicked(true)
     }
-
   }
 
   function onSearchUnfocus(e) {
     console.log("onSearchUnfocus called!");
-    if (popupNumber === 3) {
+    // only change color if on the right section and if they aren't clicking on the search button
+    if ((popupNumber === 3 || popupNumber === 4) && (!e.relatedTarget || e.relatedTarget.value !== "Google Search")) {
       setPopupNumber(2);
       setSearchBarClicked(false)
     }
-
   }
 
   if (!didSearch) {
