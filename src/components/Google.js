@@ -2,6 +2,7 @@ import React, {useState, useRef, useEffect} from 'react';
 import '../App.css';
 import Popup from 'reactjs-popup';
 import googlelogo from '../images/googlelogo.png';
+import r0 from '../images/googleresult0.jpg';
 
 
 // TODO
@@ -9,9 +10,13 @@ import googlelogo from '../images/googlelogo.png';
 
 function Google(props) {
   const [popupNumber, setPopupNumber] = useState(0);
+  const [imageNumber, setImageNumber] = useState(0);
   const [searchBarClicked, setSearchBarClicked] = useState(true);
   const [didSearch, setDidSearch] = useState(false);
   
+  const images = [
+    r0,
+  ]
 
   const popups = [
     // 0
@@ -109,14 +114,49 @@ function Google(props) {
           >
           <p>Great! Now, you typed in your search correctly, let's see what happens next!</p>
           <button class="initial-button" onClick={() => {setDidSearch(true); setPopupNumber(6)}}>Click here to proceed</button>
-      </Popup>
+      </Popup>, 
+      // 6
+      <Popup
+      open={true} closeOnDocumentClick={false} closeOnEscape={false} modal
+      contentStyle={{
+        position: "fixed",
+        top: "6vh",
+        right: "6vh"
+      }}
+      overlayStyle={{
+        "pointer-events": "none",
+        background: "rgb(255, 255, 255, 0)"
+      }}
+        >
+        <p>
+          This is what shows up when you search "chocolate chip cookie on Google."
+        </p>
+        <button class="initial-button" onClick={() => {setPopupNumber(7); setImageNumber(1)}}>Click here to proceed</button>
+      </Popup>,
+      // 7
+      <Popup
+      open={true} closeOnDocumentClick={false} closeOnEscape={false} modal
+      contentStyle={{
+        position: "fixed",
+        top: "6vh",
+        right: "6vh"
+      }}
+      overlayStyle={{
+        "pointer-events": "none",
+        background: "rgb(255, 255, 255, 0)"
+      }}
+        >
+        <p>todo</p>
+        <button class="previous-button" onClick={() => {setPopupNumber(6); setImageNumber(0)}}>Click here to go back</button>
+        <button class="next-button" onClick={() => {setPopupNumber(8); setImageNumber(2)}}>Click here to proceed</button>
+      </Popup>,
   ]
 
   function handleSubmit(e) {
     e.preventDefault();
     let s = e.target.search.value.toLowerCase().trim();
     console.log("handleSubmit called!");
-    if (popupNumber === 3) {
+    if (popupNumber === 3 || popupNumber === 4) {
       if (s !== "chocolate chip cookie") {
         setPopupNumber(4);
       } else {
@@ -143,6 +183,7 @@ function Google(props) {
   }
 
   if (!didSearch) {
+    // before user types in correct search
     return (
       <div>
         <div class="google-content">
@@ -171,8 +212,12 @@ function Google(props) {
       </div>
     );
   } else {
+    // after user types in correct search
     return (
-      <p>todo</p>
+      <div>
+        <img id="google-result" src={images[imageNumber]} />
+        {popups[popupNumber]}
+      </div>
     );
   }
 }

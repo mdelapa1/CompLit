@@ -2,7 +2,6 @@ import './App.css';
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import Start    from './components/Start.js';
 import Google   from './components/Google.js';
-import Twitter  from './components/Twitter.js';
 import Facebook from './components/Facebook.js';
 
 
@@ -19,7 +18,6 @@ function App() {
           <Routes>
             <Route path='/' element={<Start />} />
             <Route path='/google' element={<Google />} />
-            <Route path='/twitter' element={<Twitter />} />
             <Route path='/facebook' element={<Facebook />} />
             
           </Routes>
