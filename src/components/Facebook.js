@@ -115,7 +115,7 @@ function Facebook(props) {
       }}
         >
           <h3>Fill all the basic information about yourself</h3>
-        <p>fill all the information that is marked inside the red area.This information help your friends to find you in facebook. And many more things</p>
+        <p>Fill all the information that is marked inside the red area. This information help your friends to find you in facebook. And many more things</p>
         <button class="previous-button" onClick={() => {setPopupNumber(2); setImageNumber(2)}}>Click here to go back</button>
         <button class="next-button" onClick={() => {setPopupNumber(4);setImageNumber(4)}}>Click here to proceed</button>
       </Popup>,
@@ -134,7 +134,7 @@ function Facebook(props) {
         >
            <h3>Set a strong Password</h3>
         <p>Your password should be strong. so, no one can easily hack or misuse your account</p>
-        <p>After filling all the detailes then click on the green button which is marked which red arrow to create your new account</p>
+        <p>After filling all the details, click on the green button which is marked which red arrow to create your new account</p>
         <button class="previous-button" onClick={() => {setPopupNumber(3); setImageNumber(3)}}>Click here to go back</button>
         <button class="next-button" onClick={() => {setPopupNumber(5); setImageNumber(5)}}>Click here to proceed</button>
       </Popup>,
@@ -152,6 +152,7 @@ function Facebook(props) {
       }}
         >
           <h3>Fill the OTP</h3>
+          <p>Facebook sends you a One-Time Password (OTP for short) to verify that the mobile number/email you give is legitimate</p>
         <p>1 Step : You have to fill the otp which is send to your given mobile number or email id</p>
         <p>2 Step : If you didnot recived the OTP then you have to click on Resend confirmation code</p>
         <p>3 Step : After that you click on the next button to proceed further</p>

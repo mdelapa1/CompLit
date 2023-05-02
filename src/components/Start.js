@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import LandingImg from "../LandingPage.jpg"
 import FacbookImg from "../FacebookImg.png"
 import GoogleImg from "../GoogleImg.png"
+import ScrollDown from "../scroll.png"
+
 import "./start.css"
 
 function Start() {
@@ -16,6 +18,12 @@ function Start() {
       <div class="image">
         <img src={LandingImg} alt="placeholder image" />
       </div>
+      
+      <div class="break">
+      <p>Scroll below to get started!</p>
+      <img src={ScrollDown} alt="scroll down" />
+      </div>
+      
     </div>
 
 
@@ -27,7 +35,7 @@ function Start() {
     <div class="card-content">
       <h2>Facebook</h2>
       <p>A social networking platform that allows the users to connect with their friends and family online.</p>
-      <button class="explore-btn"><Link to='/facebook'>Click Here to Explore</Link></button>
+      <button class="explore-btn"><Link to='/facebook'>Click Here to Learn</Link></button>
     </div>
   </div>
   
@@ -38,7 +46,7 @@ function Start() {
     <div class="card-content">
       <h2>Google</h2>
       <p>A website that enables users to search for information on a wide number of subjects and provides the results to them.</p>
-      <button class="explore-btn"><Link to='/google'>Click Here to Explore</Link></button>
+      <button class="explore-btn"><Link to='/google'>Click Here to Learn</Link></button>
     </div>
   </div>
 </div>

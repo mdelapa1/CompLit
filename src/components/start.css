@@ -6,14 +6,27 @@ body {
 }
 .container {
   display: flex;
+  flex: 50%;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 30px 30px;
-  height: 70vh;
-  padding: 50px;
+  padding: 20px 50px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
   border-radius: 25px;
+}
+.break {
+  width: 100%;
+}
+.break p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 0px;
+}
+.break img {
+  width: 20px;
+  height: auto;
 }
 .text {
   flex: 1;
