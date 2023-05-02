@@ -60,7 +60,7 @@ function Facebook(props) {
             left: "6vh"
           }}
           >
-          <h3>Welcome to Facebook!</h3>
+          <h2>Welcome to Facebook!</h2>
           <p>Facebook is the one of the largest social networking platforms in the world!</p>
           <p>Facebook allows users to create profiles, connect with friends and family, share photos and videos, join groups, and follow pages of their interests. It has become a crucial platform for personal and business communication and networking.</p>
           <button class="initial-button" onClick={() => {setPopupNumber(1); setImageNumber(1)}}>Click here to proceed</button>
@@ -96,7 +96,7 @@ function Facebook(props) {
         background: "rgb(255, 255, 255, 0)"
       }}
         >
-        <h3>Create New Account</h3>
+        <h2>Create New Account</h2>
         <p>when you are a new user and you dont have any accouunt on facebook then you have to click create new account button which is at mark with red square.</p>
         <button class="previous-button" onClick={() => {setPopupNumber(1); setImageNumber(1)}}>Click here to go back</button>
         <button class="next-button" onClick={() => {setPopupNumber(3); setImageNumber(3)}}>Click here to proceed</button>
@@ -114,7 +114,7 @@ function Facebook(props) {
         background: "rgb(255, 255, 255, 0)"
       }}
         >
-          <h3>Fill all the basic information about yourself</h3>
+          <h2>Fill all the basic information about yourself</h2>
         <p>Fill all the information that is marked inside the red area. This information help your friends to find you in facebook. And many more things</p>
         <button class="previous-button" onClick={() => {setPopupNumber(2); setImageNumber(2)}}>Click here to go back</button>
         <button class="next-button" onClick={() => {setPopupNumber(4);setImageNumber(4)}}>Click here to proceed</button>
@@ -132,7 +132,7 @@ function Facebook(props) {
         background: "rgb(255, 255, 255, 0)"
       }}
         >
-           <h3>Set a strong Password</h3>
+           <h2>Set a strong Password</h2>
         <p>Your password should be strong. so, no one can easily hack or misuse your account</p>
         <p>After filling all the details, click on the green button which is marked which red arrow to create your new account</p>
         <button class="previous-button" onClick={() => {setPopupNumber(3); setImageNumber(3)}}>Click here to go back</button>
@@ -151,7 +151,7 @@ function Facebook(props) {
         background: "rgb(255, 255, 255, 0)"
       }}
         >
-          <h3>Fill the OTP</h3>
+          <h2>Fill the OTP</h2>
           <p>Facebook sends you a One-Time Password (OTP for short) to verify that the mobile number/email you give is legitimate</p>
         <p>1 Step : You have to fill the otp which is send to your given mobile number or email id</p>
         <p>2 Step : If you didnot recived the OTP then you have to click on Resend confirmation code</p>
@@ -189,7 +189,7 @@ function Facebook(props) {
         background: "rgb(255, 255, 255, 0)"
       }}
         >
-          <h3>Yaahhh! you successfully created the account</h3>
+          <h2>Yaahhh! you successfully created the account</h2>
         <p>In the top left corner there is the name show which is earlier filled by you choice.</p>
         <p>Click on it to set the basic information like your hobbies, and many more.</p>
         <button class="previous-button" onClick={() => {setPopupNumber(6); setImageNumber(6)}}>Click here to go back</button>
@@ -208,7 +208,7 @@ function Facebook(props) {
         background: "rgb(255, 255, 255, 0)"
       }}
         >
-          <h3>Build your profile</h3>
+          <h2>Build your profile</h2>
         <p>Here you have to see the top there is avtar which is contain inside the red outline where you have to set the profile picture.</p>
         <p>After that there is the option called Intro where you have to edit all the detail like you have to add the "Bio" and edit details</p>
         <button class="previous-button" onClick={() => {setPopupNumber(7); setImageNumber(7)}}>Click here to go back</button>
@@ -246,7 +246,7 @@ function Facebook(props) {
         background: "rgb(255, 255, 255, 0)"
       }}
         >
-          <h3>Find friends</h3>
+          <h2>Find friends</h2>
         <p>To search friends on facebook, there is search option which is marked at the top left corner of the page. Here you can easily search on it</p>
         <p>You can also see who can send you the friend request and who is your friend, when was your friends birthday.</p>
         <button class="previous-button" onClick={() => {setPopupNumber(9); setImageNumber(9)}}>Click here to go back</button>
@@ -300,7 +300,7 @@ function Facebook(props) {
         background: "rgb(255, 255, 255, 0)"
       }}
         >
-          <h3>Feed Section</h3>
+          <h2>Feed Section</h2>
         <p>This is very intresting section where you can watch videos memes and all.</p>
         <p>You can easily scroll and see feeds infinitly</p>
         <button class="previous-button" onClick={() => {setPopupNumber(12); setImageNumber(12)}}>Click here to go back</button>
@@ -319,7 +319,7 @@ function Facebook(props) {
         background: "rgb(255, 255, 255, 0)"
       }}
         >
-          <h3>Post your thought, emotions and pictures</h3>
+          <h2>Post your thought, emotions and pictures</h2>
         <p>You can easily post your thought, emotion, videos and pictures. </p>
         <button class="previous-button" onClick={() => {setPopupNumber(13); setImageNumber(13)}}>Click here to go back</button>
         <button class="next-button" onClick={() => {setPopupNumber(15); setImageNumber(15)}}>Click here to proceed</button>
@@ -413,7 +413,7 @@ function Facebook(props) {
 
     return (
       <div>
-        <img class="google-result" src={images[imageNumber]} />
+        <img class="google-result" role="presentation" src={images[imageNumber]} />
         {popups[popupNumber]}
       </div>
     );
