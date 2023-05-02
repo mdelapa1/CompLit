@@ -23,9 +23,6 @@ import fb24 from '../FacebookImages/fb24.jpeg'
 import fb25 from '../FacebookImages/fb25.jpeg'
 import fblogo from '../FacebookImages/fblogo.png'
 
-// TODO
-// Fix the CSS to properly vertically align the search icon/textarea
-
 function Facebook(props) {
   const [popupNumber, setPopupNumber] = useState(0);
   const [imageNumber, setImageNumber] = useState(0);

@@ -1,8 +1,8 @@
 import '../App.css';
 import {Link} from 'react-router-dom';
 import LandingImg from "../LandingPage.jpg"
-import FacbookImg from "../FacebookImg.jpg"
-import GoogleImg from "../GoogleImg.jpg"
+import FacbookImg from "../FacebookImg.png"
+import GoogleImg from "../GoogleImg.png"
 import "./start.css"
 
 function Start() {
@@ -27,7 +27,7 @@ function Start() {
     <div class="card-content">
       <h2>Facebook</h2>
       <p>A social networking platform that allows the users to connect with their friends and family online.</p>
-      <button class="explore-btn"><Link to='/facebook'>Explore</Link></button>
+      <button class="explore-btn"><Link to='/facebook'>Click Here to Explore</Link></button>
     </div>
   </div>
   
@@ -38,7 +38,7 @@ function Start() {
     <div class="card-content">
       <h2>Google</h2>
       <p>A website that enables users to search for information on a wide number of subjects and provides the results to them.</p>
-      <button class="explore-btn"><Link to='/google'>Explore</Link></button>
+      <button class="explore-btn"><Link to='/google'>Click Here to Explore</Link></button>
     </div>
   </div>
 </div>
@@ -66,14 +66,14 @@ function Start() {
 
 <footer>
   <div class="footer-container">
-    <div class="brand-info">
+    {/* <div class="brand-info">
       <h3>Brand Name</h3>
       <p>123 Main Street<br/>Anytown, USA 12345</p>
     </div>
     <div class="brand-info">
       <h3>Contact Us</h3>
       <p>Email: info@example.com</p>
-    </div>
+    </div> */}
   </div>
   <div class="copy-right">
     <p>&copy; 2023 CompLit. All Rights Reserved.</p>
